@@ -71,6 +71,9 @@ class Volunteer(Document):
     sent_photo = BooleanField(default=False)
     aggreed_terms = BooleanField(default=False)
     april1 = BooleanField(default=False)
+    telegram_id = StringField(max_length=500, required=False)
+    telegram_chat_id = StringField(max_length=500, required=False)
+    telegram_secret = StringField(max_length=500, required=False)
 
     def clean_data(self) -> dict:
         data = self.to_mongo()
